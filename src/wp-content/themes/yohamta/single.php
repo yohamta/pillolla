@@ -31,9 +31,9 @@
     
       <!--アイキャッチ取得-->
       <?php if( has_post_thumbnail() ): ?>
-      <div class="kiji-img">
-        <?php the_post_thumbnail( 'large' ); ?>
-      </div>
+        <div class="kiji-img">
+          <?php the_post_thumbnail(); ?>
+        </div>
       <?php endif; ?>
     
       <!--本文取得-->

@@ -11,6 +11,12 @@ body, html {
   font-family: Helvetica Neue,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS PGothic,sans-serif
 }
 
+/*画像サイズ*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*コンテンツのサイズ指定*/
 .header-inner, .container, .footer-inner {
   max-width: 1200px;
@@ -26,8 +32,7 @@ body, html {
 
 .title-description {
   font-size: 0.8rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
   text-align: center;
   color: #666;
 }
@@ -161,7 +166,6 @@ body, html {
 }
 
 .header-nav {
-  padding-left: 10px;
 }
 
 .header-nav ul {
@@ -200,7 +204,7 @@ body, html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
-    margin: 10px 0;
+    margin: 20px 0;
     box-sizing: border-box;
     text-align: center;
   }
@@ -295,7 +299,7 @@ footer {
   padding: 10px;
 }
 
-.sidebar-wrapper h4 {
+.sidebar-wrapper > h4 {
   font-size: 1.1em;
   margin-top: 0;
   margin-bottom: 10px;
@@ -543,6 +547,12 @@ footer {
 
 .contents-description {
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.contents-description > h2 {
+  margin: 0;
+  padding: 0;
 }
 
 /*------記事ページ------*/
@@ -563,11 +573,9 @@ footer {
 }
 
 .kiji-img {
-  max-width: 640px;
   margin: 30px auto;
   text-align: center;
 }
-
 
 /*タグ*/
 

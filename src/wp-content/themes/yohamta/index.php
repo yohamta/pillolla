@@ -3,25 +3,27 @@
 <div class="container">
   <div class="contents">
 
-    <div class="contents-description">
-      <?php if(is_category() || is_tag()): ?>
-        <h2><?php single_cat_title() ?>の記事一覧</h2>
-      <?php elseif(is_year()): ?>
-        <h2><?php the_time("Y年") ?>の記事一覧</h2>
-      <?php elseif(is_month()): ?>
-        <h2><?php the_time("Y年m月") ?>の記事一覧</h2>
-      <?php endif; ?>
-    </div>
+    <?php if(is_category() || is_tag() || is_year() || is_month()): ?>
+      <div class="contents-description">
+        <?php if(is_category() || is_tag()): ?>
+          <h2><?php single_cat_title() ?>の記事一覧</h2>
+        <?php elseif(is_year()): ?>
+          <h2><?php the_time("Y年") ?>の記事一覧</h2>
+        <?php elseif(is_month()): ?>
+          <h2><?php the_time("Y年m月") ?>の記事一覧</h2>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <article <?php post_class( 'kiji-list' ); ?>>
         <a href="<?php the_permalink(); ?>">
 
-          <!--画像を追加-->
-          <?php if( has_post_thumbnail() ): ?>
+          <?php /* 画像を追加 */ ?>
+          <?php if( has_post_thumbnail() && get_the_post_thumbnail_url() != "" ): ?>
             <?php the_post_thumbnail('medium'); ?>
           <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.gif" alt="no-img"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/no-image.png" alt="no-img"/>
           <?php endif; ?>
 
           <div class="text">
