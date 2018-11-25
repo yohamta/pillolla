@@ -6,6 +6,11 @@
   Version: 1.0.0
 */
 
+/*フォント*/
+body, html {
+  font-family: Helvetica Neue,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS PGothic,sans-serif
+}
+
 /*コンテンツのサイズ指定*/
 .header-inner, .container, .footer-inner {
   max-width: 1200px;
@@ -13,14 +18,36 @@
   margin-left: auto;
 
   /* Smartphone */
-  padding: 10px;
+  padding: 0 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
+.title-description {
+  font-size: 0.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #666;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 0;
+  }
+}
+
+.header-inner {
+  display: flex;
+}
+
 .contents, #sidebar {
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -65,18 +92,18 @@
 */
 
 /*タイトルを文字列にする場合*/
+
 .site-title {
-  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .site-title h1 {
   font-size: 2.4em;
   margin: 0;
-  padding: 10px 5px 0;
 }
 
 .site-title h1 a {
-  display: block;
   text-decoration: none;
   color: #000;
 }
@@ -87,16 +114,32 @@
 }
 
 #navbutton {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  padding: 8px 12px;
+  color: #4a4a4a;
   cursor: pointer;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  border: solid 1px #aaa;
-  border-radius: 5px;
-  background-color: #fff;
+  display: block;
+  position: relative;
+  width: 3.25rem;
+  margin-left: auto;
+}
+
+#navbutton span {
+  position: absolute;
+  width: 16px;
+  height: 1px;
+  left: calc(50% - 8px);
+  background-color: currentColor;
+}
+
+#navbutton span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+#navbutton span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+#navbutton span:nth-child(3) {
+  top: calc(50% + 4px);
 }
 
 #navbutton:hover {
@@ -156,8 +199,10 @@
   .header-nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding:0 10px;
+    padding: 0 10px;
+    margin: 10px 0;
     box-sizing: border-box;
+    text-align: center;
   }
   .header-nav ul:after {
     display: block;
@@ -177,10 +222,6 @@
   }
 }
 
-/*ヘッダーの色付け*/
-header {
-  background-color: #bfeaff;
-}
 .top-nav-area {
   background-color: #333;
 }
@@ -326,11 +367,8 @@ footer {
 
 /*新着ウィジェット*/
 .widget_recent_entries li:before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: bold;
   position: absolute;
   left: 5px;
-  content: '\f303';
   color: #464646;
 }
 
@@ -503,6 +541,9 @@ footer {
   }
 }
 
+.contents-description {
+  text-align: center;
+}
 
 /*------記事ページ------*/
 
