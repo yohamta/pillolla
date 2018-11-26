@@ -453,7 +453,13 @@ footer {
   white-space: nowrap;
   color: #fff;
   border-radius: 3px;
+}
+
+.cat-data > a {
   background-color: #464646;
+  margin-right: 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .kiji-list p {
