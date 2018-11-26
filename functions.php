@@ -28,8 +28,8 @@ add_action( 'widgets_init', 'widgetarea_init' );
 
 // CSS and Scripts
 function add_stylesheets_and_scripts() {
-  wp_enqueue_style( 'yohamta-theme-css', get_stylesheet_uri() );
-  wp_enqueue_script( 'yohamta-navbutton-script', get_template_directory_uri() .'/js/navbutton.js', array('jquery') );
+  wp_enqueue_style( 'pillolla-theme-css', get_stylesheet_uri() );
+  wp_enqueue_script( 'pillolla-navbutton-script', get_template_directory_uri() .'/js/navbutton.js', array('jquery') );
 }
 add_action( 'wp_enqueue_scripts', 'add_stylesheets_and_scripts' );
 

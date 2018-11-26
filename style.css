@@ -643,5 +643,33 @@ footer {
   margin: 0 0 .3em;
 }
 
+/*table*/
 
+.kiji-table {
+  border-collapse: collapse;
+}
 
+.kiji-table th {
+  color: #FF9800;
+  background: #fff5e5;
+  padding: 10px;
+}
+
+.kiji-table td {
+  padding: 3px 10px;
+}
+
+.kiji-table th, .kiji-table td {
+  border: solid 1px black;
+}
+
+/*crayon problem*/
+.crayon-nums-content > div:last-child,
+.crayon-pre > div:last-child {
+  display: none;
+}
+
+/*font-size fix*/
+.entry-content code, code, pre {
+  font-size: 100%;
+}
