@@ -26,6 +26,18 @@ function widgetarea_init() {
 }
 add_action( 'widgets_init', 'widgetarea_init' );
 
+// 省略文字数
+function my_excerpt_length($length) {
+  return 200;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
+//概要（抜粋）の省略文字
+function my_excerpt_more($more) {
+  return '...';
+}
+add_filter('excerpt_more', 'my_excerpt_more');
+
 // CSS and Scripts
 function add_stylesheets_and_scripts() {
   wp_enqueue_style( 'pillolla-theme-css', get_stylesheet_uri() );
