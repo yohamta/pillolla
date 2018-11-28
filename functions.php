@@ -45,4 +45,31 @@ function add_stylesheets_and_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_stylesheets_and_scripts' );
 
+// --------------------
+// ShortCodes
+
+// Related Articles
+function sc_related($atts) {
+  extract(shortcode_atts(array(
+      'id' => 0,
+  ), $atts));
+
+  $post = get_post($id);
+  $title = esc_html(get_the_title($id));
+  $img_tag = "";
+  if( has_post_thumbnail() && get_the_post_thumbnail_url() != "" ) {
+    $img_tag .= get_the_post_thumbnail($id, 'medium');
+  } else {
+    $img_tag .= '<img src="' . get_template_directory_uri() . '/img/no-image.jpg" alt="no-img" />';
+  }
+  $out = '<div class="blog-card">';
+  $out .= '<a href="' . get_permalink( $post->ID ) . '" title="' . esc_attr( $post->post_title ) . '">';
+  $out .= '<div class="blog-card-thumbnail">' . $img_tag . '</div>';
+  $out .= '<div class="blog-card-content">';
+  $out .= '</div>';
+  $out .= '<div class="blog-card-title">'. $title .' </div>';
+  $out .= '</a></div>';
+  return $out;
+}
+add_shortcode('related', 'sc_related');
 
