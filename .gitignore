@@ -2,3 +2,4 @@ tags
 src/wp-content/plugins/*
 src/wp-content/languages/plugins/*
 src/wp-content/uploads/*
+.DS_Store

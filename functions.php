@@ -45,6 +45,47 @@ function add_stylesheets_and_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_stylesheets_and_scripts' );
 
+// Settings
+function theme_customize_register($wp_customize) {
+  /* セクション追加 */
+  $wp_customize->add_section('original_settings', array(
+    'title' =>'独自設定',
+    'priority' => 100,
+  ));
+  // favicon url
+  $wp_customize->add_setting('orig_options[favicon_url]', array(
+    'type' => 'option',
+    'transport' => 'postMessage'
+  ));
+  $wp_customize->add_control('original_favicon_url_text', array(
+    'settings' => 'orig_options[favicon_url]',
+    'label' => 'Favicon URL',
+    'section' => 'original_settings',
+    'type' => 'text',
+  ));
+
+  // no_image url
+  $wp_customize->add_setting('orig_options[no_image_url]', array(
+    'type' => 'option',
+    'transport' => 'postMessage'
+  ));
+  $wp_customize->add_control('original_no_image_url_text', array(
+    'settings' => 'orig_options[no_image_url]',
+    'label' => 'No Image Image URL',
+    'section' => 'original_settings',
+    'type' => 'text',
+  ));
+}
+add_action( 'customize_register', 'theme_customize_register' );
+
+function get_original_setting($option) {
+  $opt = get_option('orig_options');
+  if (isset($opt[$option])) {
+    return $opt[$option];
+  }
+  return null;
+}
+
 // --------------------
 // ShortCodes
 
