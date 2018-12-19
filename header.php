@@ -3,7 +3,7 @@
   <head prefix="og: http://ogp.me/ns#">
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <?php /* SNS用メタデータ */ ?>
@@ -63,7 +63,7 @@
 
     <?php endif; ?>
 
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() .'/img/favicon.ico' ?>" />
+    <link rel="shortcut icon" href="<?php echo get_original_setting('favicon_url') ?>" />
   
     <?php wp_head(); ?><!--システム・プラグイン用-->
 

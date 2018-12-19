@@ -456,7 +456,13 @@ footer {
   white-space: nowrap;
   color: #fff;
   border-radius: 3px;
+}
+
+.cat-data > a {
   background-color: #464646;
+  margin-right: 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .kiji-list p {
@@ -646,5 +652,138 @@ footer {
   margin: 0 0 .3em;
 }
 
+/*table*/
+
+.kiji-table {
+  border-collapse: collapse;
+}
+
+.kiji-table th {
+  color: #FF9800;
+  background: #fff5e5;
+  padding: 10px;
+}
+
+.kiji-table td {
+  padding: 3px 10px;
+}
+
+.kiji-table th, .kiji-table td {
+  border: solid 1px black;
+}
+
+/*crayon problem*/
+.crayon-nums-content > div:last-child,
+.crayon-pre > div:last-child {
+  display: none;
+}
+
+/*font-size fix*/
+.entry-content code, code, pre {
+  font-size: 120%;
+}
 
 
+/*-----------------------------------
+BlogCard
+------------------------------------*/
+.blog-card{
+ border:1px solid #999;
+ word-wrap:break-word;
+ max-width:100%;
+ border-radius:0px;
+ margin-bottom: 30px;
+ font-size :1.2em;
+ box-shadow: 4px 4px 0px #666;
+ transition:0.1s ease;
+ position:relative;
+}
+.blog-card:hover{
+ box-shadow: 0px 0px 0px #666;
+}
+
+.blog-card a {
+ color: #333;
+ background: #fff;
+ display: -webkit-flex;
+ display: -moz-flex;
+ display: -ms-flex;
+ display: -o-flex;
+ display: flex;
+ -webkit-transition: 0.3s ease-in-out;
+ -moz-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ text-decoration:none;
+ font-weight: bold;
+ border-radius: 0px;
+ padding: 0px;
+}
+
+.blog-card-thumbnail{
+ padding:10px;
+}
+
+.blog-card-thumbnail img {
+ display: block;
+ padding: 0;
+ -webkit-transition: 0.3s ease-in-out;
+ -moz-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ margin-top: 0!important;
+ max-height: 100px;
+ width: auto;
+}
+
+.blog-card-content{
+ line-height:120%;
+}
+.blog-card-title{
+ padding: 13px 10px 10px 0;
+ font-size: 90%;
+ margin-bottom: 30px;
+}
+
+.blog-card::after {
+ content: '>続きを読む';
+ font-size: 0.4em;
+ font-weight: bold;
+ color: #fff;
+ background: #111;
+ width: 7em;
+ display: inline-block;
+ padding: 0.5em;
+ position: absolute;
+ text-align: center;
+ margin-right: 1em;
+ -webkit-border-radius: 2px;
+ -moz-border-radius: 2px;
+ border-radius: 3px;
+ bottom: 10px;
+ right: 0px;
+}
+
+.blog-card-date{
+ color:#333;
+ font-size: 90%;
+ margin-right:10px;
+ font-family: GillSans;
+}
+/*-----------------------------------
+BlogCard(スマホ)
+------------------------------------*/
+@media only screen and (max-width: 600px){
+  .blog-card-title {
+    font-size: 70%;
+  }
+  .blog-card-title::before {
+    font-size: 0.7em;
+  }
+  
+  .blog-card-thumbnail img {
+    max-width: 100%;
+    margin-left: 0px!important;
+    margin-bottom: 0!important;
+  }
+}
